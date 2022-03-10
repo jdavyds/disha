@@ -3,10 +3,30 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router} from 'react-router-dom';
+import { Provider } from 'react-redux'
+import {createStore, combineReducers} from 'redux'
+import {contactReducer, socialReducer, socLinkReducer, shapeReducer, pageReducer, styleReducer, addonReducer, valuesReducer} from './assets/reducer';
+
+const allReducers = combineReducers({
+  contact: contactReducer,
+  social: socialReducer,
+  socLink: socLinkReducer,
+  shape: shapeReducer,
+  style: styleReducer,
+  addon: addonReducer,
+  values: valuesReducer,
+  page: pageReducer
+})
+const store = createStore(allReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+    <Provider store={store}>
+      <App />
+    </Provider>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

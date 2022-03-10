@@ -1,25 +1,89 @@
-import logo from './logo.svg';
 import './App.css';
+import styles from './assets/Style.module.css'
+import Header from './components/header';
+import Footer from './components/footer';
+import Nav from './components/Nav';
+import Preview from './components/preview';
+import { useDispatch, useSelector } from 'react-redux'
+import Contact from './components/Contact';
+import Social from './components/Social';
+import Style from './components/Style';
+import Addon from './components/Addon';
+import { useEffect } from 'react';
+import { updatePage } from './assets/action';
 
+const target = document.getElementById('preview')
 function App() {
+  const page = useSelector(state => state.page)
+  const dispatch = useDispatch()
+  function handleNext() {
+    if(page === 'Contact') {
+      dispatch(updatePage('Socials'))
+    }
+    if(page === 'Socials') {
+      dispatch(updatePage('Style'))
+    }
+    if(page === 'Style') {
+      dispatch(updatePage('Addon'))
+    }
+  }
+  function handlePrev() {
+    if(page === 'Socials') {
+      dispatch(updatePage('Contact'))
+    }
+    if(page === 'Style') {
+      dispatch((updatePage('Socials')))
+    }
+    if(page === 'Addon') {
+      dispatch(updatePage('Style'))
+    }
+  }
+  useEffect(() => {
+    
+  })
+  function handleCopy() {
+    const target = document.createRange()
+    target.selectNode(document.getElementById('preview'))
+    window.getSelection().removeAllRanges()
+    window.getSelection().addRange(target)
+    document.execCommand('copy')
+    window.getSelection().removeAllRanges()
+    // const target = document.getElementById('preview')
+    // navigator.clipboard.read(target)
+    // console.log('copied');
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <main>
+        <div className={styles.main}>
+                <Nav />
+            <div className={styles.all}>
+                <Contact />
+                <Social />
+                <Style />
+                <Addon />
+                <div className={styles.previewWrapper}>
+                     Preview
+                    <Preview />
+                    <button className={styles.copy}
+                    onClick={handleCopy}>Copy to ClipBoard</button>
+                </div>
+            </div>
+        </div>
+        <div className={styles.pagination}>
+              <button
+              onClick={handlePrev} 
+              className={styles.prev}>PREVIOUS</button>
+              <button 
+              onClick={handleNext}
+              className={styles.next}>NEXT</button>
+        </div>
+      </main>
+      <Footer />
     </div>
   );
 }
-
 export default App;
+
