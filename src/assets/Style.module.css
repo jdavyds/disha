@@ -459,11 +459,14 @@ display: none;
 }
 .preview section h2 {
     margin: 10px 0;
+    font-size: 20px;
 }
 .preview section p, .preview section h4 {
+    font-size: 14px;
     color: rgb(80, 87, 107);
     margin: 5px 0;
 }
+
 .preview b {
     color:rgba(44, 16, 3, 0.6);
 }

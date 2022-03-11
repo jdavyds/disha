@@ -10,8 +10,6 @@ import icon4 from './../assets/Vector (4).png'
 import icon5 from './../assets/Vector (5).png' 
 import icon8 from './../assets/Vector (8).png' 
 import icon9 from './../assets/Vector (9).png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {  faHashtag } from '@fortawesome/free-solid-svg-icons'
 import { useState, useEffect } from 'react';
 
 function Preview() {
@@ -40,7 +38,7 @@ function Preview() {
     const [shapes, setShapes] = useState(50)
     const [color, setColor] = useState('#03132c99')
     const [font, setFont] = useState('cursive')
-    const [size, setSize]  = useState(20)
+    const [size, setSize]  = useState(18)
     const [style, setStyle] = useState('Square')
     const [avatar, setAvatar] = useState(130)
     const [position, setPosition] = useState({
@@ -86,7 +84,7 @@ function Preview() {
     }, [shape])
     useEffect(() => {
         if(colors === 'red') {
-            setColor('#f51515cc')
+            setColor('red')
         }
         if(colors === 'blue') {
             setColor('#03132c99')
@@ -108,13 +106,13 @@ function Preview() {
     }, [fonts])
     useEffect(() => {
         if(sizes === 'Small') {
-            setSize(18)
+            setSize(16)
         }
         if(sizes === 'Medium') {
-            setSize(20)
+            setSize(18)
         }
         if(sizes === 'Large') {
-            setSize(22)
+            setSize(20)
         }
     }, [sizes])
     useEffect(() => {

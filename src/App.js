@@ -41,16 +41,38 @@ function App() {
   useEffect(() => {
     
   })
-  function handleCopy() {
-    const target = document.createRange()
-    target.selectNode(document.getElementById('preview'))
-    window.getSelection().removeAllRanges()
-    window.getSelection().addRange(target)
-    document.execCommand('copy')
-    window.getSelection().removeAllRanges()
+  function handleCopy(e) {
+    // const target = document.createRange()
+    // target.selectNode(document.getElementById('preview'))
+    // window.getSelection().removeAllRanges()
+    // window.getSelection().addRange(target)
+    // document.execCommand('copy')
+    // window.getSelection().removeAllRanges()
     // const target = document.getElementById('preview')
     // navigator.clipboard.read(target)
     // console.log('copied');
+    let doc = document
+    let text = doc.getElementById('preview')
+    let range, selection;
+    
+    if (doc.body.createTextRange)
+    {
+        range = doc.body.createRange();
+        range.moveToElementText(text);
+        range.select();
+    } 
+    
+    else if (window.getSelection)
+    {
+        selection = window.getSelection();        
+        range = doc.createRange();
+        range.selectNodeContents(text);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    }
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    e.target.textContent = "Copied";
   }
   
   return (
