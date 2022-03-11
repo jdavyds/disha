@@ -12,7 +12,6 @@ import Addon from './components/Addon';
 import { useEffect } from 'react';
 import { updatePage } from './assets/action';
 
-const target = document.getElementById('preview')
 function App() {
   const page = useSelector(state => state.page)
   const dispatch = useDispatch()
