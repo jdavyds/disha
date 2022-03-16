@@ -132,7 +132,7 @@ function Social() {
                         updater()
                     }}/>
                     </nav>
-                    <Select className='shape'
+                    <Select className={styles.shape}
                         value={selected}
                         options={Options} 
                         onChange={handleChange}

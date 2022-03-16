@@ -3,7 +3,7 @@ import { Copyright } from '@mui/icons-material';
 function Footer() {
     return(
         <div className="footer">
-            <Copyright /> 2022 Disha by ULLWEB
+            <Copyright /> 2022 ULLWEB
         </div>
     )
 }

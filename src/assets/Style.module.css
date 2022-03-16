@@ -117,6 +117,40 @@
     color: #0A3C87;
     background: initial;
 }
+@media only screen and (max-width: 800px) {
+    .main {
+        height: 100%;
+        width: 100vw;
+    }
+    .all {
+        width: 100vw;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        grid-template-columns: none;
+    }    
+    .active, .normal {
+        font-size: 18px;
+        padding: 10px;
+        margin: 5px;
+    }
+    .contact {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .conForm {
+        width: 90%;
+        justify-content: center;
+    }
+    .conForm label {
+        width: 100%;
+    }
+    .conForm button {
+        width: 100%;
+    }
+}
 /* Social */
 .social {
     overflow-y: scroll;
@@ -214,6 +248,46 @@
     font-size: 30px;
     color: #03132C;
 }
+@media only screen and (max-width: 800px) {
+    .social {
+        height: fit-content;
+        padding: 20px 0;
+        width: 100vw;
+    }
+    .socialIcons {
+        width: 100%;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        border: none;
+        box-shadow: none;
+    }
+    .socialIcons nav {
+        width: 100%;
+        padding: 0px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        grid-template-columns: unset;
+    }
+    .shape {
+        margin-bottom: 50px;
+        width: 90%;
+    }
+    .socDiv img {
+        padding: 10px;
+        width: 50px;
+        height: 80%;
+    }
+    .socDiv input {
+        font-size: 17px;
+    }
+    .socDiv #icons {
+        width: 50px;
+        font-size: 20px;
+    }
+}
 /* Style */
 .format {
     display: flex;
@@ -285,6 +359,55 @@
 #slide {
     color: #0A3C87;
     height: 10px;
+}
+@media only screen and (max-width: 800px) {
+    .fontFormat {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    .formatDiv {
+        padding: 0 10px;
+        box-shadow: none;
+        margin-top: 0px;
+    }
+    .imageSection {
+        margin: 30px 0;
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: unset;
+    }
+    .imgLogo {
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+    }
+    .imgLogo img:last-of-type {
+        display: none;
+    }
+    .imageFormat {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .imageFormat label {
+        position: relative;
+        margin: 10px 0;
+    }
+    .slider {
+        display: flex;
+        flex-direction: column;
+    }
+    .slider {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    #slide {
+        color: #0A3C87;
+        height: 10px;
+        width: 100%;
+    }
 }
 /* Addon */
 .addon {
@@ -528,4 +651,55 @@ a {
     background: #03132C;
     color: white;
     font-size: 20px;
+}
+@media only screen and (max-width: 800px) {
+    .previewWrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 30px 0;
+    }
+    .preview {
+        max-height: unset;
+        width: 95%;
+    }
+    .copy {
+        width: 95%;
+    }
+    .pagination {
+        height: 10vh;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+    }
+    .next, .prev {
+        padding: 7px 15px;
+        font-size: 18px;
+        border-radius: 2px;
+        outline: none;
+        margin: 10px;
+    }
+    .banner div:first-of-type {
+        display: flex;
+        flex-direction: column;
+    }
+    .blink {
+        background: yellow;
+        display: flex;
+        padding: 0;
+        grid-template-columns: unset;
+        width: 100%;
+    }
+    .blink img {
+        width: 60px;
+    }
+    .blink input {
+        width: calc(100% - 60px);
+        outline: none;
+        padding: 5px;
+        background: #f8f8f8;
+        font-size: 14px;
+    }
 }

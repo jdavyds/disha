@@ -122,7 +122,7 @@ function Social() {
                     </nav>
                     <div className={styles.formatDiv}>
                         <section className={styles.imageSection}>
-                            <div>
+                            <div className={styles.imgLogo}>
                                 <img src={dp} alt="" />
                                 <img src={cam} alt="" className={styles.imgIcon}/>
                             </div>

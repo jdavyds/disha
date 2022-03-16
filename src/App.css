@@ -14,6 +14,14 @@
 .header img {
   height: 50px;
 }
+#header-soc {
+  font-size: 40px; 
+  color: #202B8F;
+  margin-right: 2px;
+  padding: 5px;
+  border-radius: 50%;
+  border: 1px solid #202B8F;
+}
 .footer {
   height: 10vh;
   font-size: 18px;
@@ -21,4 +29,42 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+#hambuger {
+  display: none;
+}
+.hamNone {
+  display: none;
+}
+@media only screen and (max-width: 800px) {
+  .header img {
+    height: 25px;
+  }
+  .header nav:first-of-type {
+    display: none;
+  }
+  .header nav:last-of-type {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  #hambuger {
+    display: flex;
+    color: #202B8F;
+    font-size: 35px;
+  }
+  .hamNav {
+    z-index: 111111;
+    background: #F8F8F8;
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    width: 150px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #header-soc {
+    margin: 5px;
+  }
 }
