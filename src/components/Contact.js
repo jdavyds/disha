@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import styles from './../assets/Style.module.css'
 import { Upload } from '@mui/icons-material';
 import { useDispatch, useSelector} from 'react-redux'
@@ -17,6 +17,19 @@ function Contact() {
         address: '',
         imageAdd: '',
     })
+    const [imageUrl, setImageUrl] = useState()
+    const [imageFile, setImageFile] = useState()
+
+    const onDrop = useCallback(
+        acceptedFiles => {
+            const file = acceptedFiles[0]
+            setImageFile(file)
+
+            const reader = new FileReader()
+            reader.addEventListener('load', () => setImageUrl(String(reader.result)), false)
+            reader.readAsDataURL(file)
+        }, [setImageFile, setImageUrl]
+    )
     function updater() {
         dispatch(updateContact(state))
     }
@@ -94,11 +107,21 @@ function Contact() {
                 <button><Upload /> upload image
                     <input type="file" accept='image/*' required
                     onChange={ (e) =>  {
-                        setState((prevState) => ({...prevState, imageAdd: URL.createObjectURL(e.target.files[0])}))
+                        // setState((prevState) => ({...prevState, imageAdd: e.target.files[0]}))
+                        onDrop()
+                        console.log(e.target.files[0]);
                     }}
+                    id='testImg'
                     onFocus={updater()}
                     />
                 </button>
+                {
+                    imageUrl && (
+                        <div>
+                            <img src={imageUrl} alt=''/>
+                        </div>
+                    )
+                }
             </form>
         </div>
     );

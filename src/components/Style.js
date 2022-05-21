@@ -16,9 +16,9 @@ function Social() {
         { label: "green", value: 'green' },
       ];
     const fonts = [
-        { label: 'Cursive', value: 'Cursive'},
-        { label: 'Ubuntu', value: 'Ubuntu'},
-        { label: 'Sans-Serif', value: 'Sans-Serif'},
+        { label: 'Roboto Condensed', value: 'Roboto Condensed'},
+        { label: 'Cinzel', value: 'Cinzel'},
+        { label: 'Courgette', value: 'Courgette'},
     ]
     const sizes = [
         { label: 'Medium', value: 'Medium'},

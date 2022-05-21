@@ -553,9 +553,8 @@
 .preview {
     background: rgba(98, 0, 238, 0.08);;
     min-height: 60%;
-    max-height: 80%;
+    height: 60%;
     overflow-y: scroll;
-    height: fit-content;
     padding: 30px 30px 30px 10px;
     margin-top: 15px;
     display: flex;
@@ -567,6 +566,7 @@
 display: none;
 }
 .mainPrev {
+    height: 100%;
     display: flex;
     margin-bottom: 10px;
 }

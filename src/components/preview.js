@@ -9,7 +9,11 @@ import icon3 from './../assets/Vector (10).png'
 import icon4 from './../assets/Vector (4).png' 
 import icon5 from './../assets/Vector (5).png' 
 import icon8 from './../assets/Vector (8).png' 
-import icon9 from './../assets/Vector (9).png'
+import icon9 from './../assets/Vector (9).png';
+import facebook from './../assets/facebook.png'
+import slack from './../assets/slack.png'
+import insta from './../assets/insta.png'
+import dp from './../assets/dp.png'
 import { useState, useEffect } from 'react';
 
 function Preview() {
@@ -37,7 +41,7 @@ function Preview() {
     const [disclaimer, setDisclaimer] = useState(false)
     const [shapes, setShapes] = useState(50)
     const [color, setColor] = useState('#03132c99')
-    const [font, setFont] = useState('cursive')
+    const [font, setFont] = useState('Roboto Condensed')
     const [size, setSize]  = useState(18)
     const [style, setStyle] = useState('Square')
     const [avatar, setAvatar] = useState(130)
@@ -47,6 +51,8 @@ function Preview() {
         bottom: 'auto',
         left: 0
     })
+    const [src, setSrc] = useState('')
+    
     useEffect(() => {
         setDisplay(true)
     }, [social])
@@ -94,14 +100,14 @@ function Preview() {
         }
     }, [colors])
     useEffect(() => {
-        if(fonts === 'Ubuntu') {
-            setFont('Ubuntu')
+        if(fonts === 'Cinzel') {
+            setFont('Cinzel')
         }
-        if(fonts === 'Cursive') {
-            setFont('cursive')
+        if(fonts === 'Roboto Condensed') {
+            setFont('Roboto Condensed')
         }
-        if(fonts === 'Sans-Serif') {
-            setFont('sans-serif')
+        if(fonts === 'Courgette') {
+            setFont('Courgette')
         }
     }, [fonts])
     useEffect(() => {
@@ -190,13 +196,13 @@ function Preview() {
                                 </a>
                                 <a style={{borderRadius: `${shapes}%`, background: `${color}`}} href={`https://${link.twitter}`} id={social.twitter ? '' : styles.none}><img src={icon9} alt="" /></a>
                                 <a style={{borderRadius: `${shapes}%`, background: `${color}`}} href={`https://${link.facebook}`} id={social.facebook ? '' : styles.none}>
-                                <Facebook  sx={{ fontSize: 25, color: '#03132C', borderRadius: '50%'}} />
+                                <img src={facebook} alt="" />
                                 </a>
                                 <a style={{borderRadius: `${shapes}%`, background: `${color}`}} href={`https://${link.instagram}`} id={social.instagram ? '' : styles.none}>
-                                <Instagram  sx={{ fontSize: 25, color: '#03132C', }} />
+                                <img src={insta} alt="" />
                                 </a>
                                 <a style={{borderRadius: `${shapes}%`, background: `${color}`}} href={`https://${link.slack}`} id={social.slack ? '' : styles.none}>
-                                <span className={styles.hash}>#</span>
+                                <img src={slack} alt="" />
                                 </a>
                             </nav>
                         )
